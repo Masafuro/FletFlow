@@ -30,18 +30,16 @@ To facilitate reliable communication between the GUI and the backend, FletFlow u
 | `data`       | Contains the core data for processing               | `{"operand1": 5, "operand2": 3, "operation": "multiply"}` |
 | `details`    | Provides additional information or error messages   | `"Calculation completed."`, `"Invalid input"`    |
 
-### Communication Flow in Data Transmission Mode
+## Communication Flow in Data Transmission Mode
 
-1. **Transition to Data Transmission Mode**:
-   - Upon activation of an Execution Trigger element, the GUI sends the required data from the Dynamic Display elements to the backend. This data is formatted according to the above data table and transmitted via inter-process communication using `multiprocessing`.
-   
-2. **Backend Processing**:
-   - The backend system receives the data, processes the command specified in the `command` field, and then sends multiple responses to update the frontend on the progress, partial results, or errors if any occur.
+In FletFlow, the communication flow during Data Transmission Mode can be summarized in the following steps. This table outlines each step's purpose and its role in ensuring smooth and real-time interaction between the frontend and backend.
 
-3. **Real-time Response Handling**:
-   - The GUI continuously listens for incoming `response` messages from the backend, updating the relevant Dynamic Display elements or showing progress notifications as specified in the `status` and `data` fields.
+| Step                            | Description                                                                                                              | Purpose                                                                                   |
+|---------------------------------|--------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| **1. Enter Data Transmission Mode** | When the user triggers the Execution Trigger, the GUI enters Data Transmission Mode and prepares data for transmission. | Prepares Dynamic Display data for backend processing and initiates communication.         |
+| **2. Send Data to Backend**     | The GUI sends data to the backend process via `multiprocessing`, following the structured data table format.            | Ensures consistent data structure for reliable communication.                             |
+| **3. Backend Processing**       | The backend receives data, processes the specified command, and sends multiple `response` messages as needed.           | Provides real-time updates, progress, or errors during processing.                        |
+| **4. Real-time Response Handling** | The GUI continuously listens for `response` messages, updating UI elements based on `status` and `data`.                | Dynamically updates UI to reflect the latest status, progress, or errors.                 |
+| **5. Complete Transmission Mode** | After receiving the `complete` message, the GUI exits Data Transmission Mode and re-enables user interactions.          | Finalizes the process, restores UI usability, and allows for new actions.                 |
 
-4. **Completion of Data Transmission Mode**:
-   - Once all responses have been received and the backend sends a `complete` message, the GUI exits Data Transmission Mode. User interaction with the interface is re-enabled, allowing the user to perform further actions.
-
-This structured data flow ensures that FletFlow can handle complex processes with real-time updates and a stable, responsive user interface.
+This table outlines the communication flow that keeps FletFlow responsive, reliable, and capable of handling complex, real-time interactions.
