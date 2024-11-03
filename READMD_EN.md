@@ -3,6 +3,7 @@
 [**日本語**](README.md)
 
 - FletFlow is an easy-to-develop, stable real-time system using Flet's GUI for seamless progress tracking, updates, and error handling in business apps.
+- By deciding in advance the rules for interaction between the GUI side and the back-end side, development can be completely split.
 
 ## Interface Classification in FletFlow
 
