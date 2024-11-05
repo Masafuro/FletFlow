@@ -1,0 +1,84 @@
+window:
+  title: "Sample Window"
+  width: 500            # ウィンドウの幅
+  height: 500           # ウィンドウの高さ
+  grid_size: 5          # グリッドの行・列数
+  cell_size: 100        # 各セルのサイズ（px）
+
+frames:
+  - id: "frame_1"
+    row: 0
+    column: 0
+    rowspan: 1
+    columnspan: 2
+    bg_color: "#f0f0f0"   # フレームの背景色
+    elements:
+      - id: "label_1"
+        type: "label"
+        text: "Frame 1, Label"
+        style: "primary"
+        text_color: "#000000"  # テキスト色
+        nswe: "nsew"           # 上下左右に広げる
+
+      - id: "button_1"
+        type: "button"
+        text: "Click Me"
+        command: "on_click_frame1"
+        bg_color: "#c0c0c0"    # ボタンの背景色
+        text_color: "#ffffff"  # ボタンのテキスト色
+        nswe: "nsew"           # 上下左右に広げる
+
+  - id: "frame_2"
+    row: 0
+    column: 2
+    rowspan: 1
+    columnspan: 3
+    bg_color: "#d0e0f0"
+    elements:
+      - id: "label_2"
+        type: "label"
+        text: "Frame 2, Label"
+        style: "info"
+        text_color: "#333333"
+        nswe: "ew"             # 左右に広げる
+
+      - id: "entry_1"
+        type: "entry"
+        placeholder: "Enter text"
+        nswe: "ew"             # 左右に広げる
+
+  - id: "frame_3"
+    row: 1
+    column: 0
+    rowspan: 2
+    columnspan: 2
+    bg_color: "#e0f0c0"
+    elements:
+      - id: "button_2"
+        type: "button"
+        text: "Submit"
+        command: "on_submit"
+        bg_color: "#00ff00"    # 背景色（緑）
+        text_color: "#000000"  # テキスト色（黒）
+        nswe: "s"              # 下側に固定
+
+  - id: "frame_4"
+    row: 1
+    column: 2
+    rowspan: 2
+    columnspan: 3
+    bg_color: "#f0d0c0"
+    elements:
+      - id: "label_3"
+        type: "label"
+        text: "Frame 4, Description"
+        style: "secondary"
+        text_color: "#111111"
+        nswe: "nsew"           # 上下左右に広げる
+
+      - id: "checkbox_1"
+        type: "checkbox"
+        text: "I agree"
+        variable: "agree_var"
+        nswe: "w"              # 左に寄せる
+

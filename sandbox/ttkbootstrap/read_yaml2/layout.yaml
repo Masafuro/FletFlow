@@ -1,0 +1,47 @@
+window:
+  title: "Sample Application"
+  width: 800
+  height: 600
+
+elements:
+  - id: "header_label"
+    type: "label"
+    text: "Header Title"
+    x: 20
+    y: 20
+    width: 200
+    height: 30
+    text_color: "#FFFFFF"
+    bg_color: "#333333"
+
+  - id: "submit_button"
+    type: "button"
+    text: "Submit"
+    x: 20
+    y: 500
+    width: 100
+    height: 50
+    bg_color: "#007BFF"
+    text_color: "#FFFFFF"
+
+  - id: "username_label"
+    type: "label"
+    text: "Username:"
+    x: 20
+    y: 100
+    width: 100
+    height: 30
+
+  - id: "username_entry"
+    type: "entry"
+    x: 20
+    y: 100
+    width: 200
+    height: 30
+
+  - id: "description_text"
+    type: "text"
+    x: 20
+    y: 150
+    width: 300
+    height: 200

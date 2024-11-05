@@ -1,0 +1,73 @@
+window:
+  title: "Sample Window"
+  width: 600            # ウィンドウの幅
+  height: 600           # ウィンドウの高さ
+  grid_size: 6          # グリッドの行・列数
+  cell_size: 100        # 各セルのサイズ（px）
+
+frames:
+  - id: "frame_1"
+    row: 0
+    column: 0
+    rowspan: 1
+    columnspan: 2
+    elements:
+      - id: "label_1"
+        type: "label"
+        text: "Frame 1, Label"
+        style: "primary"
+      - id: "button_1"
+        type: "button"
+        text: "Click Me"
+        command: "on_click_frame1"
+
+  - id: "frame_2"
+    row: 0
+    column: 2
+    rowspan: 1
+    columnspan: 3
+    elements:
+      - id: "label_2"
+        type: "label"
+        text: "Frame 2, Label"
+        style: "info"
+      - id: "entry_1"
+        type: "entry"
+        placeholder: "Enter text"
+
+  - id: "frame_3"
+    row: 1
+    column: 0
+    rowspan: 2
+    columnspan: 2
+    elements:
+      - id: "button_2"
+        type: "button"
+        text: "Submit"
+        command: "on_submit"
+
+  - id: "frame_4"
+    row: 1
+    column: 2
+    rowspan: 2
+    columnspan: 3
+    elements:
+      - id: "label_3"
+        type: "label"
+        text: "Frame 4, Description"
+        style: "secondary"
+      - id: "checkbox_1"
+        type: "checkbox"
+        text: "I agree"
+        variable: "agree_var"
+
+  - id: "frame_5"
+    row: 3
+    column: 0
+    rowspan: 2
+    columnspan: 5
+    elements:
+      - id: "footer_label"
+        type: "label"
+        text: "Footer Information"
+        style: "warning"
